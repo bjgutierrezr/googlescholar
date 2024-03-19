@@ -47,7 +47,9 @@ select_data = df[df['uniorg_nombre'].isin(grupos)]
 # Group data together
 
 rango_hindex = range(0, select_data['pergoomet_hindex'].max()+1)
-hist_data = select_data[['nombre','pergoomet_hindex','uniorg_nombre']].pivot('nombre', 'uniorg_nombre','pergoomet_hindex')
+hist_data = select_data[['nombre','pergoomet_hindex','uniorg_nombre']].pivot(index ='nombre', 
+                                                                             columns = 'uniorg_nombre',
+                                                                             values = 'pergoomet_hindex')
 #st.write(select_data[['nombre','pergoomet_hindex']])
 #st.write(hist_data)
 
