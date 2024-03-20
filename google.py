@@ -103,5 +103,12 @@ texto_colores = """
 
 # Mostrar texto con diferentes colores
 st.markdown(texto_colores, unsafe_allow_html=True)
+top10 = DataFrame()
 
-st.dataframe(hist_data)
+for grupo in grupos:
+    top = hist_data[['nombre', grupo]].sort_values(by = grupo, ascending =False).head(10)
+    top['concatenada'] = top['nombre'] ', h index: '+ top[grupo]
+    
+    top[grupo] = top['concatenada'] 
+    top10 = df_concatenado = pd.concat([top10, top[grupo]], axis=1)
+st.dataframe(top10)
