@@ -98,7 +98,7 @@ st.plotly_chart(fig, theme="streamlit", use_container_width=True)
 # Texto con diferentes colores
 # Texto con diferentes colores
 texto_colores = """
-<span style="color:red">----   </span> Valor de h index para la persona seleccionada.
+<span style="font-size:24px; color:red">----   </span> Valor de h index para la persona seleccionada.
 """
 
 # Mostrar texto con diferentes colores
