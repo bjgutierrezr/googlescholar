@@ -11,6 +11,7 @@ def load_data():
 
 
 st.header('Indicadores de impacto científico de Agrosavia', divider='rainbow')
+st.subheader('Análisis de Datos a nivel corpotativo')
 df = load_data()
 indices = ['pergoomet_hindex', 'pergoomet_awindex',
            'pergoomet_eindex','pergoomet_gindex','pergoomet_hcindex']
@@ -30,6 +31,8 @@ col3.metric("e index",  eindex)
 col4.metric("g index",  eindex)
 col5.metric("hc index",  eindex)
 
+
+st.subheader('Análisis de Datos por perfil')
 # Obtener la lista única de valores para la columna de interés
 options = sorted(df['nombre'].unique())
 
